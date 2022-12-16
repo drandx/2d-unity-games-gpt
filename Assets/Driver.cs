@@ -17,29 +17,14 @@ public class Driver : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        //rotate every 60 frames
-        // if (Time.frameCount % 60 == 0)
-        // {
-        //     transform.Rotate(0, 0, 90);
-        //     transform.localScale = new Vector3(1, 1, 1);
-        //     transform.
-        // }
-        //transform.Rotate(0, 0, steerSpeed);
-        
+    { 
         // Rotate based on input manager
         transform.Rotate(0, 0, Input.GetAxis("Horizontal"));
-
-
-
-        //Move object in a circle
-        //transform.position = new Vector3(Mathf.Cos(Time.time), Mathf.Sin(Time.time), 10);
-        //transform.Translate(Mathf.Cos(Time.time), Mathf.Sin(Time.time), 10);
-        transform.Translate(0, moveSpeed, 0);
         
-        // Move object forward on y axis with acceleration
-        //transform.Translate(0, 0.000001f * Time.frameCount, 0);
+        //transform.Translate(0, moveSpeed, 0);
 
+        // Move object forward on y axis using vertical input
+        transform.Translate(0, Input.GetAxis("Vertical") * 0.005f, 0);
 
     }
 }
