@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Driver : MonoBehaviour
 {
-    [SerializeField] float steerSpeed = 0.1f;
-    [SerializeField] float moveSpeed = 0.01f;
+    [SerializeField] float steerSpeed = 0.8f;
+    [SerializeField] float moveSpeed = 0.005f;
 
     // Start is called before the first frame update
     void Start()
@@ -19,12 +19,12 @@ public class Driver : MonoBehaviour
     void Update()
     { 
         // Rotate based on input manager
-        transform.Rotate(0, 0, Input.GetAxis("Horizontal"));
+        transform.Rotate(0, 0, -Input.GetAxis("Horizontal") * steerSpeed);
         
         //transform.Translate(0, moveSpeed, 0);
 
         // Move object forward on y axis using vertical input
-        transform.Translate(0, Input.GetAxis("Vertical") * 0.005f, 0);
+        transform.Translate(0, Input.GetAxis("Vertical") * moveSpeed, 0);
 
     }
 }
