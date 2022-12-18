@@ -18,5 +18,8 @@ public class Collision : MonoBehaviour
         Debug.Log("Trigger Detected");
         // Print the name of the object that collided with this object
         Debug.Log(collision.gameObject.name);
+
+        // Print collided object tag
+        Debug.Log(collision.gameObject.tag);
     }
 }
