@@ -7,18 +7,6 @@ public class FollowCamera : MonoBehaviour
     // Object to follow
     [SerializeField] GameObject objectToFollow;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     // Position camera to follow object
     private void LateUpdate()
     {
