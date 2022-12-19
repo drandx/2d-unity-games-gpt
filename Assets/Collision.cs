@@ -7,9 +7,9 @@ public class Collision : MonoBehaviour
     // Detect when object collides with another object
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Collision Detected");
+        //Debug.Log("Collision Detected");
         // Print the name of the object that collided with this object
-        Debug.Log(collision.gameObject.name);
+        //Debug.Log(collision.gameObject.name);
     }
 
     // Print when object collides with a trigger
