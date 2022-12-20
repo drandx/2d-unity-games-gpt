@@ -23,6 +23,7 @@ public class Delivery : MonoBehaviour
         foreach (GameObject item in collectedPackages)
         {
             item.transform.position = transform.position;
+            item.transform.rotation = transform.rotation;
             // Change the item object color to green
             item.GetComponent<SpriteRenderer>().color = Color.green;
         }
