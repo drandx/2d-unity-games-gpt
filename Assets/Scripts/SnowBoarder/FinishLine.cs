@@ -5,6 +5,8 @@ using UnityEngine;
 public class FinishLine : MonoBehaviour
 {
     [SerializeField] float timeToReload = 0.5f;
+    // Reference to a particle system
+    [SerializeField] ParticleSystem finishParticles;
 
     // Detect when Riders enters in the trigger
     private void OnTriggerEnter2D(Collider2D collision)
@@ -13,6 +15,8 @@ public class FinishLine : MonoBehaviour
         if (collision.gameObject.tag == "Rider")
         {
             Invoke("ReloadScene", timeToReload);
+            // Play the particle system
+            finishParticles.Play();
         }
     }
 

@@ -9,7 +9,6 @@ public class PlayerController : MonoBehaviour
     // Rigidbody2D is a component that allows us to apply forces to the object
     Rigidbody2D rb;
 
-
     // Start is called before the first frame update
     void Start()
     {
