@@ -2046,7 +2046,7 @@ SurfaceEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Speed: 15
+  m_Speed: 20
   m_SpeedVariation: 0
   m_ForceScale: 1
   m_UseContactForce: 0
@@ -12405,6 +12405,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   torque: 0.5
+  baseSpeed: 15
+  boostedSpeed: 20
 --- !u!114 &1357652099
 MonoBehaviour:
   m_ObjectHideFlags: 0
