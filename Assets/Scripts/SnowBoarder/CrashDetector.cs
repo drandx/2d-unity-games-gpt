@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CollisionDetector : MonoBehaviour
+public class CrashDetector : MonoBehaviour
 {
     // Detect when an object collides with the object
     private void OnTriggerEnter2D(Collider2D collision)
