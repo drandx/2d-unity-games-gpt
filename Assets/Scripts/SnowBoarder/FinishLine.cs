@@ -17,6 +17,8 @@ public class FinishLine : MonoBehaviour
             Invoke("ReloadScene", timeToReload);
             // Play the particle system
             finishParticles.Play();
+            // Get audio component and reproduce the finish sound
+            GetComponent<AudioSource>().Play();
         }
     }
 
