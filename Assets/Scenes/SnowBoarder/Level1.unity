@@ -12422,7 +12422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03c4ed80919044f989d4f8837918672e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToReload: 0.5
+  timeToReload: 1
   crashParticles: {fileID: 1174834528}
   crashSound: {fileID: 8300000, guid: 05d593c06fb294c5f8beaa08f276dd46, type: 3}
 --- !u!61 &1357652100

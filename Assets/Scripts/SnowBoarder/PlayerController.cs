@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float baseSpeed = 20f;
     // Boosted speed
     [SerializeField] float boostedSpeed = 25f;
+    bool canMove;
 
     // Start is called before the first frame update
     void Start()
@@ -22,13 +23,23 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         // Find object of type surfaceEffector2D
         surfaceEffector2D = FindObjectOfType<SurfaceEffector2D>();
+        canMove = true;
     }
 
     // When the player presses the horizontal axis  add torque to the object rotates int he oposite direction
     void Update()
     {
-        RotatePlayer();
-        BoostPlayer();
+        if (canMove) {
+            RotatePlayer();
+            BoostPlayer();
+        }
+
+        //Print a message when the game object does a fill spin
+        if (transform.rotation.z > 0.5f || transform.rotation.z < -0.5f)
+        {
+            Debug.Log("You did a full spin!");
+        }
+
     }
 
     // Method to boost the player speed when the player presses the vertical axis
@@ -55,5 +66,11 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddTorque(torque);
         }
+    }
+
+    // Disable controllers methods
+    public void DisableControllers()
+    {
+        canMove = false;
     }
 }
