@@ -12,6 +12,8 @@ public class CrashDetector : MonoBehaviour
     [SerializeField] AudioClip crashSound;
     //Player controller script
     PlayerController playerController;
+    // Sound is playerd variable
+    bool hasCrashed = false;
 
     //Get an instance of the player controller script
     private void Start()
@@ -22,13 +24,17 @@ public class CrashDetector : MonoBehaviour
     // Detect when an object collides with the object
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        if (other.gameObject.tag == "Ground")
+        if (other.gameObject.tag == "Ground" && !hasCrashed)
         {
             // Play the particle system
             crashParticles.Play();
             Invoke("ReloadScene", timeToReload);
+         
             //Get audio component and play the crash sound
             GetComponent<AudioSource>().PlayOneShot(crashSound);
+            hasCrashed = true;
+
+            // Disable player controller
             playerController.DisableControllers();
         }
     }
