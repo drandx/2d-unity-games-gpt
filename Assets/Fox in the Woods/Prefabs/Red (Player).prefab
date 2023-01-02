@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8670799759275220162}
   - component: {fileID: 980308901}
   - component: {fileID: 980308902}
+  - component: {fileID: 980308903}
   m_Layer: 0
   m_Name: Red (Player)
   m_TagString: Untagged
@@ -175,3 +176,15 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &980308903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8670799759275220166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9b40bb4659814f1f96ee0997727b976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
