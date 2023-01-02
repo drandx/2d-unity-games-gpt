@@ -383,7 +383,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &303809120
 Transform:
   m_ObjectHideFlags: 0
@@ -441,7 +441,7 @@ TilemapRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
+  m_ChunkCullingBounds: {x: 0.016129017, y: 0.016129017, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -19065,22 +19065,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8670799759275220166, guid: 6f69fc9eeba98469f8ee1382bdf53d19, type: 3}
   m_PrefabInstance: {fileID: 8670799758573047654}
   m_PrefabAsset: {fileID: 0}
---- !u!70 &980308901
-CapsuleCollider2D:
+--- !u!114 &980308903
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 980308896}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.028472722, y: -0.011388987}
-  m_Size: {x: 0.5102676, y: 0.8633309}
-  m_Direction: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9b40bb4659814f1f96ee0997727b976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1495071582
 GameObject:
   m_ObjectHideFlags: 0
@@ -24794,6 +24790,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8670799759275220163, guid: 6f69fc9eeba98469f8ee1382bdf53d19, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f69fc9eeba98469f8ee1382bdf53d19, type: 3}

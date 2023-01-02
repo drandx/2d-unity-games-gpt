@@ -8,4 +8,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SnowBoarder/Level1.unity
     guid: 360521f1828bd495aa77a815f04ec198
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: f118f59b322a94d2f9554673a833bf8f, type: 2}
