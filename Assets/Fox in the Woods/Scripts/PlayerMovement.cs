@@ -62,6 +62,7 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(move.x * runSpeed , rb.velocity.y);
         // Set animator to isRunning if the player is moving
         animator.SetBool("isRunning", move.x != 0);
+        animator.SetBool("isClimbing", false);
     }
 
    // Make the player jump
