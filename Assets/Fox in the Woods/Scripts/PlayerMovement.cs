@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float runSpeed = 5f;
     // Game variable for jump speed
     [SerializeField] float jumpSpeed = 5f;
+    // SerializeField for climb speed
+    [SerializeField] float climbSpeed = 5f;
 
     // Vector2 to store the move value
     Vector2 move;
@@ -27,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Run();
         FlipPlayer();
+        ClimbLadder();
     }
 
     // IsGrounded method to check if the player is on the ground
@@ -83,6 +86,27 @@ public class PlayerMovement : MonoBehaviour
             // Flip the sprite
             sr.flipX = true;
         }
+    }
+
+    // ClimbLadder method to make the player climb Climbable objects
+    public void ClimbLadder() {
+        if (!CanClimb()) {
+            return;
+        }
+        // Get the rigidbody component
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        // Add velocity to the rigidbody and avoid the player to move horizontally. Use variable to adjust the climb speed
+        rb.velocity = new Vector2(rb.velocity.x, move.y * climbSpeed);
+        // Set animator to isClimbing if the player is climbing
+        animator.SetBool("isClimbing", move.y != 0);
+    }
+
+    // CanClimb method to check if the player is colliding with a Climbable object
+    public bool CanClimb() {
+        // Get the collider component
+        Collider2D collider = GetComponent<Collider2D>();
+        // Check if the player is colliding with a Climbable object
+        return Physics2D.IsTouchingLayers(collider, LayerMask.GetMask("Climbable"));
     }
 
 
