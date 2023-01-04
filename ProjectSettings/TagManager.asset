@@ -49,11 +49,11 @@ TagManager:
   - name: Background
     uniqueID: 700957539
     locked: 0
-  - name: Platforms
-    uniqueID: 2327230649
-    locked: 0
   - name: Water
     uniqueID: 2275257073
+    locked: 0
+  - name: Platforms
+    uniqueID: 2327230649
     locked: 0
   - name: Player
     uniqueID: 137681893
