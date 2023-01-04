@@ -29,6 +29,16 @@ public class PlayerMovement : MonoBehaviour
         FlipPlayer();
     }
 
+    // IsGrounded method to check if the player is on the ground
+    bool IsGrounded() {
+        // Get the rigidbody component
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        // Get the collider component
+        Collider2D collider = GetComponent<Collider2D>();
+        // Check if the player is on the ground
+        return Physics2D.IsTouchingLayers(collider, LayerMask.GetMask("Ground"));
+    }
+
     void OnMove(InputValue value) {
         // Assign the move value to a class property
         move = value.Get<Vector2>();
@@ -36,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnJump(InputValue value) {
         // Jump if the player is on the ground and the jump button is pressed
-        if (value.isPressed) {
+        if (value.isPressed && IsGrounded()) {
             Jump();
         }
     }
@@ -58,17 +68,6 @@ public class PlayerMovement : MonoBehaviour
         // Add velocity to the rigidbody and avoid the player to move horizontally. Use variable to adjust the jump speed
         rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y + jumpSpeed);
     }
-
-    // Check if the player is on the ground
-    bool IsGrounded() {
-        // Get the rigidbody component
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        // Get the collider component
-        Collider2D collider = GetComponent<Collider2D>();
-        // Check if the player is on the ground
-        return Physics2D.IsTouchingLayers(collider, LayerMask.GetMask("Ground"));
-    }
-
 
     //Flip the player sprite depending on the direction is moving
     void FlipPlayer() {
