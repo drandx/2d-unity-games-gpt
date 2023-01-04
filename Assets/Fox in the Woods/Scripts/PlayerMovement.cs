@@ -9,11 +9,14 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 move;
     // Speed of the player
     public float speed = 5f;
+    // Get animation controller
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        // Get the animator component
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -36,6 +39,8 @@ public class PlayerMovement : MonoBehaviour
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         // Add velocity to the rigidbody and avoid the player to move vertically. Use variable to adjust the speed
         rb.velocity = new Vector2(move.x * speed, rb.velocity.y);
+        // Set animator to isRunning if the player is moving
+        animator.SetBool("isRunning", move.x != 0);
     }
 
     //Flip the player sprite depending on the direction is moving
