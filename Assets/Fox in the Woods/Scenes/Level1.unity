@@ -34050,7 +34050,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.12
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -43824,7 +43824,7 @@ GameObject:
   - component: {fileID: 2129174029}
   - component: {fileID: 2129174031}
   - component: {fileID: 2129174030}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ladder Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
