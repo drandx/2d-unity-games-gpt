@@ -16,12 +16,16 @@ public class PlayerMovement : MonoBehaviour
     Vector2 move;
     // Get animation controller
     Animator animator;
+    // Player gravity scale
+    float gravityScale;
     
     // Start is called before the first frame update
     void Start()
     {
         // Get the animator component
         animator = GetComponent<Animator>();
+        // Get initial gravity scale
+        gravityScale = GetComponent<Rigidbody2D>().gravityScale;
     }
 
     // Update is called once per frame
@@ -92,6 +96,8 @@ public class PlayerMovement : MonoBehaviour
     // ClimbLadder method to make the player climb Climbable objects
     public void ClimbLadder() {
         if (!CanClimb()) {
+            // Set gravity scale to initial value to avoid the player to fall
+            GetComponent<Rigidbody2D>().gravityScale = gravityScale;
             return;
         }
         // Get the rigidbody component
@@ -100,6 +106,9 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(rb.velocity.x, move.y * climbSpeed);
         // Set animator to isClimbing if the player is climbing
         animator.SetBool("isClimbing", move.y != 0);
+
+        // Set gravity scale to 0 to avoid the player to fall
+        rb.gravityScale = 0;
     }
 
     // CanClimb method to check if the player is colliding with a Climbable object
