@@ -12,6 +12,12 @@ public class PlayerMovement : MonoBehaviour
     // SerializeField for climb speed
     [SerializeField] float climbSpeed = 5f;
 
+    // CapsuleCollider2D to store the player collider
+    CapsuleCollider2D bodyCollider;
+
+    // BoxCollider2D to store the player feet collider
+    BoxCollider2D feetCollider;
+
     // Vector2 to store the move value
     Vector2 move;
     // Get animation controller
@@ -26,6 +32,9 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         // Get initial gravity scale
         gravityScale = GetComponent<Rigidbody2D>().gravityScale;
+        // Get both colliders
+        bodyCollider = GetComponent<CapsuleCollider2D>();
+        feetCollider = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
@@ -38,12 +47,8 @@ public class PlayerMovement : MonoBehaviour
 
     // IsGrounded method to check if the player is on the ground
     bool IsGrounded() {
-        // Get the rigidbody component
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        // Get the collider component
-        Collider2D collider = GetComponent<Collider2D>();
         // Check if the player is on the ground
-        return Physics2D.IsTouchingLayers(collider, LayerMask.GetMask("Ground"));
+        return Physics2D.IsTouchingLayers(feetCollider, LayerMask.GetMask("Ground"));
     }
 
     void OnMove(InputValue value) {
@@ -113,10 +118,8 @@ public class PlayerMovement : MonoBehaviour
 
     // CanClimb method to check if the player is colliding with a Climbable object
     public bool CanClimb() {
-        // Get the collider component
-        Collider2D collider = GetComponent<Collider2D>();
         // Check if the player is colliding with a Climbable object
-        return Physics2D.IsTouchingLayers(collider, LayerMask.GetMask("Climbable"));
+        return Physics2D.IsTouchingLayers(bodyCollider, LayerMask.GetMask("Climbable"));
     }
 
 
