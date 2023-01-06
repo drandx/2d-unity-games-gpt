@@ -19,7 +19,7 @@ TagManager:
   - Climbable
   - Player
   - Background
-  - 
+  - Enemies
   - 
   - 
   - 
@@ -57,6 +57,9 @@ TagManager:
     locked: 0
   - name: Ladders
     uniqueID: 264039881
+    locked: 0
+  - name: Enemies
+    uniqueID: 298716383
     locked: 0
   - name: Player
     uniqueID: 137681893
