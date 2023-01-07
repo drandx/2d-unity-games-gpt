@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 8827797336034294535}
   - component: {fileID: 8827797336034294534}
   - component: {fileID: 8827797336034294533}
+  - component: {fileID: 830858592}
+  - component: {fileID: 830858591}
   m_Layer: 9
   m_Name: Goober (Enemy)
   m_TagString: Untagged
@@ -94,7 +96,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 298716383
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 247126422, guid: bac98ef11007f48b4bae8dfebfc062dc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -120,8 +122,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.041750133, y: -0.08350065}
-  m_Size: {x: 0.6302112, y: 0.6659962}
+  m_Offset: {x: 0.041750133, y: -0.07293671}
+  m_Size: {x: 0.6302112, y: 0.6448685}
   m_Direction: 0
 --- !u!50 &8827797336034294533
 Rigidbody2D:
@@ -144,3 +146,42 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &830858592
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8827797336034294531}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.3664198, y: -0.20705843}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0.09375, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.037403107, y: 0.6032114}
+  m_EdgeRadius: 0
+--- !u!114 &830858591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8827797336034294531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a73e98273d6545f9960cf8bc11bf026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpeed: 1

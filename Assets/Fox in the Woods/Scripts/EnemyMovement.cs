@@ -21,24 +21,6 @@ public class EnemyMovement : MonoBehaviour
         MoveEnemy();
     }
 
-    // // OnCollisionEnter2D method to check if the enemy hits a wall
-    // void OnCollisionEnter2D(Collision2D collision) {
-    //     // Print the collision object tag
-    //     Debug.Log(collision.gameObject.tag);
-
-    //     // Check if the enemy hits a wall
-    //     if (collision.gameObject.tag == "Wall") {
-    //         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-
-    //         // Flip the enemy
-    //         transform.localScale = new Vector2(-(Mathf.Sign(enemyRigidbody.velocity.x)), 1f);
-    //         Debug.Log(spriteRenderer.flipX);
-    //         // Flip sprite renderer
-    //         GetComponent<SpriteRenderer>().flipX = !GetComponent<SpriteRenderer>().flipX;
-    //         Debug.Log(spriteRenderer.flipX);
-    //     }
-    // }
-
     // MoveEnemy method to move the enemy
     void MoveEnemy() {
         // Move the enemy
@@ -46,6 +28,8 @@ public class EnemyMovement : MonoBehaviour
     }
 
    private void OnTriggerExit2D(Collider2D other) {
-        Debug.Log("Exit!");
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        // Flip the enemy
+        transform.localScale = new Vector2(-(Mathf.Sign(enemyRigidbody.velocity.x)), 1f);
    }
 }
