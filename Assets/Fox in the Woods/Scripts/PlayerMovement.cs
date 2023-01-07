@@ -58,6 +58,13 @@ public class PlayerMovement : MonoBehaviour
             isAlive = false;
             // DIsable input system
             GetComponent<PlayerInput>().enabled = false;
+            // Set animator to Dying
+            animator.SetTrigger("Dying");
+
+            //Get the player moving direaction sign
+            float direction = Mathf.Sign(GetComponent<Rigidbody2D>().velocity.x);
+            // Add force to the player to make it fly
+            GetComponent<Rigidbody2D>().AddForce(new Vector2(direction * 1f, direction * 1f), ForceMode2D.Impulse);
         }
         
    }
