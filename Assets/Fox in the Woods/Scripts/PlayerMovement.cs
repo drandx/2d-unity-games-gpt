@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
    // Die method to kill the player
    void Die() {
         // Check if the player collided with any layer with the tag "Enemies"
-        if (bodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemies"))) {
+        if (bodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemies")) || bodyCollider.IsTouchingLayers(LayerMask.GetMask("Hazards"))) {
             Debug.Log("Player died");
             // Set isAlive to false and disable controllers
             isAlive = false;
