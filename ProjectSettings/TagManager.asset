@@ -9,6 +9,7 @@ TagManager:
   - Customer
   - Rider
   - Ground
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -58,12 +59,12 @@ TagManager:
   - name: Ladders
     uniqueID: 264039881
     locked: 0
+  - name: Bouncing
+    uniqueID: 341943615
+    locked: 0
   - name: Enemies
     uniqueID: 298716383
     locked: 0
   - name: Player
     uniqueID: 137681893
-    locked: 0
-  - name: Bouncing
-    uniqueID: 341943615
     locked: 0
