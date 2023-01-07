@@ -34050,7 +34050,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8
+  orthographic size: 4.12
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -34252,6 +34252,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1283810535}
   - component: {fileID: 1283810536}
+  - component: {fileID: 1283810537}
   m_Layer: 0
   m_Name: Idle Camera
   m_TagString: Untagged
@@ -34313,6 +34314,21 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1879902768}
+--- !u!114 &1283810537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283810534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f453f694addf4275988fac205bc91968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BoundingShape2D: {fileID: 303809123}
+  m_Damping: 0.5
+  m_MaxWindowSize: -1
 --- !u!1 &1432815070
 GameObject:
   m_ObjectHideFlags: 0
@@ -34323,6 +34339,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1432815071}
   - component: {fileID: 1432815072}
+  - component: {fileID: 1432815073}
   m_Layer: 0
   m_Name: Climbing Camera
   m_TagString: Untagged
@@ -34384,6 +34401,21 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1564571466}
+--- !u!114 &1432815073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1432815070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f453f694addf4275988fac205bc91968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BoundingShape2D: {fileID: 303809123}
+  m_Damping: 0.5
+  m_MaxWindowSize: -1
 --- !u!1 &1495071582
 GameObject:
   m_ObjectHideFlags: 0
@@ -44754,6 +44786,10 @@ PrefabInstance:
     - target: {fileID: 8827797336034294531, guid: b8742912370d84c9fa67fe349025281a, type: 3}
       propertyPath: m_Name
       value: Goober (Enemy)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8827797336034294534, guid: b8742912370d84c9fa67fe349025281a, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8742912370d84c9fa67fe349025281a, type: 3}
