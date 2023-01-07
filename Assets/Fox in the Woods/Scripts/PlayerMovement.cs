@@ -12,6 +12,9 @@ public class PlayerMovement : MonoBehaviour
     // SerializeField for climb speed
     [SerializeField] float climbSpeed = 5f;
 
+    // isAlive variable to check if the player is alive
+    bool isAlive = true;
+
     // CapsuleCollider2D to store the player collider
     CapsuleCollider2D bodyCollider;
 
@@ -41,9 +44,23 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Run();
-        FlipPlayer();
         ClimbLadder();
+        FlipPlayer();
+        Die();
     }
+
+   // Die method to kill the player
+   void Die() {
+        // Check if the player collided with any layer with the tag "Enemies"
+        if (bodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemies"))) {
+            Debug.Log("Player died");
+            // Set isAlive to false and disable controllers
+            isAlive = false;
+            // DIsable input system
+            GetComponent<PlayerInput>().enabled = false;
+        }
+        
+   }
 
     // IsGrounded method to check if the player is on the ground
     bool IsGrounded() {

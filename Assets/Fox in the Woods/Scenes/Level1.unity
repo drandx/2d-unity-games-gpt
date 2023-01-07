@@ -187,7 +187,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 112822725}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.713634, y: -0.625854, z: -9.348581}
+  m_LocalPosition: {x: 6.7436337, y: -1.1358542, z: -9.348581}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 200587263}
   m_Layer: 0
   m_Name: Water Tilemap
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34050,7 +34050,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.12
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -34074,7 +34074,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 386215585}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.713634, y: -0.625854, z: -9.348581}
+  m_LocalPosition: {x: 6.7436337, y: -1.1358542, z: -9.348581}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -34267,7 +34267,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1283810534}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.713634, y: -0.625854, z: -9.348581}
+  m_LocalPosition: {x: 6.7436337, y: -1.1358542, z: -9.348581}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -34338,7 +34338,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1432815070}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.713634, y: -0.625854, z: -9.348581}
+  m_LocalPosition: {x: 6.7436337, y: -1.1358542, z: -9.348581}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -44660,11 +44660,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8670799759275220167, guid: 6f69fc9eeba98469f8ee1382bdf53d19, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.58
+      value: 8.61
       objectReference: {fileID: 0}
     - target: {fileID: 8670799759275220167, guid: 6f69fc9eeba98469f8ee1382bdf53d19, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.64
+      value: -5.15
       objectReference: {fileID: 0}
     - target: {fileID: 8670799759275220167, guid: 6f69fc9eeba98469f8ee1382bdf53d19, type: 3}
       propertyPath: m_LocalPosition.z
@@ -44754,10 +44754,6 @@ PrefabInstance:
     - target: {fileID: 8827797336034294531, guid: b8742912370d84c9fa67fe349025281a, type: 3}
       propertyPath: m_Name
       value: Goober (Enemy)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8827797336034294535, guid: b8742912370d84c9fa67fe349025281a, type: 3}
-      propertyPath: m_FlipX
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8742912370d84c9fa67fe349025281a, type: 3}
