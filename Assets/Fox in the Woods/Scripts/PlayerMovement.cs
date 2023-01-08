@@ -98,17 +98,8 @@ public class PlayerMovement : MonoBehaviour
 
     //Flip the player sprite depending on the direction is moving
     void FlipPlayer() {
-        // Get the sprite renderer component
-        SpriteRenderer sr = GetComponent<SpriteRenderer>();
-        // Check if the player is moving to the right
-        if (move.x > 0) {
-            // Flip the sprite
-            sr.flipX = false;
-        }
-        // Check if the player is moving to the left
-        else if (move.x < 0) {
-            // Flip the sprite
-            sr.flipX = true;
+        if (move.x != 0) {
+            transform.localScale = new Vector2(Mathf.Sign(move.x), 1f);
         }
     }
 
@@ -149,13 +140,17 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void OnFire(InputValue value) {
-        Debug.Log("Fire");
+        // Check if the player is alive
+        if (!isAlive) {
+            return;
+        }
+
         // Instantiate a projectile if the button is pressed
         if (value.isPressed) {
             // Get gun child object
             GameObject gun = transform.Find("Gun").gameObject;
             // Instantiate the projectile
-            Instantiate(bullet, gun.transform.position, Quaternion.identity);
+            Instantiate(bullet, gun.transform.position, transform.rotation);
         }
     }
 }
