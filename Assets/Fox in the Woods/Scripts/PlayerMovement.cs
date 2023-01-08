@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpSpeed = 5f;
     // SerializeField for climb speed
     [SerializeField] float climbSpeed = 5f;
+    // SerializeField for bullet object
+    [SerializeField] GameObject bullet;
 
     // isAlive variable to check if the player is alive
     bool isAlive = true;
@@ -75,18 +77,6 @@ public class PlayerMovement : MonoBehaviour
         return Physics2D.IsTouchingLayers(feetCollider, LayerMask.GetMask("Ground"));
     }
 
-    void OnMove(InputValue value) {
-        // Assign the move value to a class property
-        move = value.Get<Vector2>();
-    }
-
-    void OnJump(InputValue value) {
-        // Jump if the player is on the ground and the jump button is pressed
-        if (value.isPressed && IsGrounded()) {
-            Jump();
-        }
-    }
-
     // Make the player run  using the move value
     void Run() {
         // Get the rigidbody component
@@ -146,5 +136,26 @@ public class PlayerMovement : MonoBehaviour
         return Physics2D.IsTouchingLayers(bodyCollider, LayerMask.GetMask("Climbable"));
     }
 
+    void OnMove(InputValue value) {
+        // Assign the move value to a class property
+        move = value.Get<Vector2>();
+    }
 
+    void OnJump(InputValue value) {
+        // Jump if the player is on the ground and the jump button is pressed
+        if (value.isPressed && IsGrounded()) {
+            Jump();
+        }
+    }
+
+    void OnFire(InputValue value) {
+        Debug.Log("Fire");
+        // Instantiate a projectile if the button is pressed
+        if (value.isPressed) {
+            // Get gun child object
+            GameObject gun = transform.Find("Gun").gameObject;
+            // Instantiate the projectile
+            Instantiate(bullet, gun.transform.position, Quaternion.identity);
+        }
+    }
 }
