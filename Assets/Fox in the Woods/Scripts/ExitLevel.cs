@@ -5,7 +5,6 @@ using UnityEngine;
 public class ExitLevel : MonoBehaviour
 {
     [SerializeField] float timeToReload = 0.5f;
-    [SerializeField] int nextSceneIndex = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +30,14 @@ public class ExitLevel : MonoBehaviour
     IEnumerator LoadNextSceneWithDelay()
     {
         yield return new WaitForSeconds(timeToReload);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(nextSceneIndex);
+        // Get current scene index
+        int currentSceneIndex = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+        // If current scene is the last one, load the first one
+        if (currentSceneIndex == UnityEngine.SceneManagement.SceneManager.sceneCountInBuildSettings - 1)
+        {
+            currentSceneIndex = 0;
+        }
+        UnityEngine.SceneManagement.SceneManager.LoadScene(currentSceneIndex + 1);
+        
     }
 }
