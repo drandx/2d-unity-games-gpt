@@ -35,5 +35,11 @@ public class SessionController : Singleton<SessionController>
         yield return new WaitForSeconds(timeToReload);
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
     }
+
+    // Reset player lives
+    public void ResetPlayerLives()
+    {
+        playerLives = 5;
+    }
     
 }
