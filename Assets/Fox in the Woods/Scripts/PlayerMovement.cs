@@ -29,6 +29,8 @@ public class PlayerMovement : MonoBehaviour
     Animator animator;
     // Player gravity scale
     float gravityScale;
+
+    SessionController sessionController;
     
     // Start is called before the first frame update
     void Start()
@@ -40,6 +42,8 @@ public class PlayerMovement : MonoBehaviour
         // Get both colliders
         bodyCollider = GetComponent<CapsuleCollider2D>();
         feetCollider = GetComponent<BoxCollider2D>();
+        // Get the session controller
+        sessionController = FindObjectOfType<SessionController>();
     }
 
     // Update is called once per frame
@@ -53,6 +57,9 @@ public class PlayerMovement : MonoBehaviour
 
    // Die method to kill the player
    void Die() {
+        if (!isAlive) {
+            return;
+        }
         // Check if the player collided with any layer with the tag "Enemies"
         if (bodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemies")) || bodyCollider.IsTouchingLayers(LayerMask.GetMask("Hazards"))) {
             // Set isAlive to false and disable controllers
@@ -66,6 +73,9 @@ public class PlayerMovement : MonoBehaviour
             float direction = Mathf.Sign(GetComponent<Rigidbody2D>().velocity.x);
             // Add force to the player to make it fly
             GetComponent<Rigidbody2D>().AddForce(new Vector2(direction * 1f, direction * 1f), ForceMode2D.Impulse);
+
+            // Decrease player lives
+            sessionController.DecreasePlayerLives();
         }
         
    }

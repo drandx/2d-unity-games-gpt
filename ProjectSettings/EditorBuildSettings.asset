@@ -17,5 +17,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Fox in the Woods/Levels/Level 3.unity
     guid: 1d160b46481234f7f9176f6993be7c8b
+  - enabled: 1
+    path: Assets/Fox in the Woods/Levels/GameOver.unity
+    guid: a6b13cc13835c417483b9c6836f55f6d
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: f118f59b322a94d2f9554673a833bf8f, type: 2}
