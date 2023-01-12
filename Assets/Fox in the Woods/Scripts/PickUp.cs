@@ -5,6 +5,8 @@ using UnityEngine;
 public class PickUp : MonoBehaviour
 {
     SessionController sessionController;
+    //Audio clip to play when the player picks up the coin
+    [SerializeField] AudioClip pickUpSound;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +25,8 @@ public class PickUp : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             sessionController.IncreasePlayerCoins();
+            // Get audio component and reproduce the finish sound
+            AudioSource.PlayClipAtPoint(pickUpSound, Camera.main.transform.position);
             Destroy(gameObject);
         }
     }
