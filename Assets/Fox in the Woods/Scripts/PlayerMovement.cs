@@ -29,8 +29,6 @@ public class PlayerMovement : MonoBehaviour
     Animator animator;
     // Player gravity scale
     float gravityScale;
-
-    SessionController sessionController;
     
     // Start is called before the first frame update
     void Start()
@@ -42,8 +40,6 @@ public class PlayerMovement : MonoBehaviour
         // Get both colliders
         bodyCollider = GetComponent<CapsuleCollider2D>();
         feetCollider = GetComponent<BoxCollider2D>();
-        // Get the session controller
-        sessionController = FindObjectOfType<SessionController>();
     }
 
     // Update is called once per frame
@@ -76,7 +72,6 @@ public class PlayerMovement : MonoBehaviour
 
             // Decrease player lives
             FindObjectOfType<SessionController>().DecreasePlayerLives();
-            //FindObjectOfType<SessionController>().ResetPlayerCoins();
         }
         
    }

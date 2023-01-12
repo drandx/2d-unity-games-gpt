@@ -5,8 +5,8 @@ using UnityEngine;
 public class GameOverButton : MonoBehaviour
 {
    public void OnButtonClick() {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
-        SessionController sessionController = FindObjectOfType<SessionController>();
-        sessionController.ResetGameSession();
+      UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+      FindObjectOfType<SessionController>().ResetGameSession();
+      FindObjectOfType<ScenePersist>().ResetScenePersist();
    }
 }

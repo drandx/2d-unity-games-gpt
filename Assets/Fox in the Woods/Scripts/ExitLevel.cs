@@ -36,8 +36,8 @@ public class ExitLevel : MonoBehaviour
         // 2 is the number of scenes in the build settings that are not levels (GameOver, Snow Board Game)
         if (currentSceneIndex == UnityEngine.SceneManagement.SceneManager.sceneCountInBuildSettings - 2)
         {
-            Debug.Log("Reset Game Session");
             FindObjectOfType<SessionController>().ResetGameSession();
+            FindObjectOfType<ScenePersist>().ResetScenePersist();
         } else {
             UnityEngine.SceneManagement.SceneManager.LoadScene(currentSceneIndex + 1);
         }        

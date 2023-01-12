@@ -12,13 +12,6 @@ public class SessionController : MonoBehaviour
     [SerializeField] private TMPro.TextMeshProUGUI playerLivesText;
     [SerializeField] private TMPro.TextMeshProUGUI playerCoinsText;   
 
-    // Assign the player lives and coins to the text
-    private void Start()
-    {
-        playerLivesText.text = playerLives.ToString();
-        playerCoinsText.text = playerCoins.ToString();
-    }
-
     void Awake()
     {
         int numGameSessions = FindObjectsOfType<SessionController>().Length;
@@ -32,6 +25,12 @@ public class SessionController : MonoBehaviour
         }
     }
 
+    // Assign the player lives and coins to the text
+    private void Start()
+    {
+        playerLivesText.text = playerLives.ToString();
+        playerCoinsText.text = playerCoins.ToString();
+    }
 
     // Get the player lives
     public int GetPlayerLives()
