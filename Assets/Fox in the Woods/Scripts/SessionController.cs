@@ -67,12 +67,16 @@ public class SessionController : MonoBehaviour
     public void ResetPlayerLives()
     {
         playerLives = 5;
+        //Assign the player lives to the text
+        playerLivesText.text = playerLives.ToString();
     }
 
     // Reset player coins
     public void ResetPlayerCoins()
     {
         playerCoins = 0;
+        //Assign the player coins to the text
+        playerCoinsText.text = playerCoins.ToString();
     }
 
     // Increase player coins
