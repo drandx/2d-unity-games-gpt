@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SessionController : MonoBehaviour
 {
-    private static int playerLives = 5;
-    private static int playerCoins = 0;
+    private int playerLives = 5;
+    private int playerCoins = 0;
     [SerializeField] private float timeToReload = 0f;
     // Serialized field for text from TMPro
     [SerializeField] private TMPro.TextMeshProUGUI playerLivesText;
@@ -88,6 +89,11 @@ public class SessionController : MonoBehaviour
         playerCoins++;
         //Assign the player coins to the text
         playerCoinsText.text = playerCoins.ToString();
+    }
+
+    public void ResetGameSession() {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+        Destroy(gameObject);
     }
     
 }

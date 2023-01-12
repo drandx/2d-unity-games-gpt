@@ -76,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
 
             // Decrease player lives
             FindObjectOfType<SessionController>().DecreasePlayerLives();
-            FindObjectOfType<SessionController>().ResetPlayerCoins();
+            //FindObjectOfType<SessionController>().ResetPlayerCoins();
         }
         
    }

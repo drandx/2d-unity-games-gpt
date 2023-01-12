@@ -33,11 +33,13 @@ public class ExitLevel : MonoBehaviour
         // Get current scene index
         int currentSceneIndex = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
         // If current scene is the last one, load the first one
-        if (currentSceneIndex == UnityEngine.SceneManagement.SceneManager.sceneCountInBuildSettings - 1)
+        // 2 is the number of scenes in the build settings that are not levels (GameOver, Snow Board Game)
+        if (currentSceneIndex == UnityEngine.SceneManagement.SceneManager.sceneCountInBuildSettings - 2)
         {
-            currentSceneIndex = 0;
-        }
-        UnityEngine.SceneManagement.SceneManager.LoadScene(currentSceneIndex + 1);
-        
+            Debug.Log("Reset Game Session");
+            FindObjectOfType<SessionController>().ResetGameSession();
+        } else {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(currentSceneIndex + 1);
+        }        
     }
 }
