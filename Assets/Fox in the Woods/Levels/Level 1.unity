@@ -43247,14 +43247,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 392174649, guid: f59f7ce22c3d04e5c85dcf375c862a0e, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -785
-      objectReference: {fileID: 0}
-    - target: {fileID: 1982997559, guid: f59f7ce22c3d04e5c85dcf375c862a0e, type: 3}
-      propertyPath: m_HorizontalAlignment
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 7909677045026561968, guid: f59f7ce22c3d04e5c85dcf375c862a0e, type: 3}
       propertyPath: m_RootOrder
       value: 5

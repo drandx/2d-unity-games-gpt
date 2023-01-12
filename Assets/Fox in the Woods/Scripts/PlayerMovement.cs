@@ -75,8 +75,8 @@ public class PlayerMovement : MonoBehaviour
             GetComponent<Rigidbody2D>().AddForce(new Vector2(direction * 1f, direction * 1f), ForceMode2D.Impulse);
 
             // Decrease player lives
-            sessionController.DecreasePlayerLives();
-            sessionController.ResetPlayerCoins();
+            FindObjectOfType<SessionController>().DecreasePlayerLives();
+            FindObjectOfType<SessionController>().ResetPlayerCoins();
         }
         
    }
