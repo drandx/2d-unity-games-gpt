@@ -80,12 +80,12 @@ public class SessionController : MonoBehaviour
     }
 
     // Increase player coins
-    public void IncreasePlayerCoins()
+    public void IncreasePlayerCoins(int coinValue)
     {
         //Print instance id
         Debug.Log("Instance ID: " + GetInstanceID());
         Debug.Log("Player coins: " + playerCoins);
-        playerCoins++;
+        playerCoins+=coinValue;
         //Assign the player coins to the text
         playerCoinsText.text = playerCoins.ToString();
     }

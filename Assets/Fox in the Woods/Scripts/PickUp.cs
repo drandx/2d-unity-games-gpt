@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour
 {
+    [SerializeField] int coinValue = 100;
     //Audio clip to play when the player picks up the coin
     [SerializeField] AudioClip pickUpSound;
     // WasCoinPickedUp variable to check if the coin was picked up
@@ -25,7 +26,7 @@ public class PickUp : MonoBehaviour
         if (other.gameObject.tag == "Player" && !WasCoinPickedUp)
         {
             WasCoinPickedUp = true;
-            FindObjectOfType<SessionController>().IncreasePlayerCoins();
+            FindObjectOfType<SessionController>().IncreasePlayerCoins(coinValue);
             // Get audio component and reproduce the finish sound
             AudioSource.PlayClipAtPoint(pickUpSound, Camera.main.transform.position);
             Destroy(gameObject);
