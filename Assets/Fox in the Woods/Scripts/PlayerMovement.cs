@@ -76,6 +76,7 @@ public class PlayerMovement : MonoBehaviour
 
             // Decrease player lives
             sessionController.DecreasePlayerLives();
+            sessionController.ResetPlayerCoins();
         }
         
    }

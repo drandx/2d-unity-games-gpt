@@ -5,6 +5,7 @@ using UnityEngine;
 public class SessionController : Singleton<SessionController>
 {
     private static int playerLives = 5;
+    private static int playerCoins = 0;
     [SerializeField] private float timeToReload = 0f;
 
     // Get the player lives
@@ -40,6 +41,19 @@ public class SessionController : Singleton<SessionController>
     public void ResetPlayerLives()
     {
         playerLives = 5;
+    }
+
+    // Reset player coins
+    public void ResetPlayerCoins()
+    {
+        playerCoins = 0;
+    }
+
+    // Increase player coins
+    public void IncreasePlayerCoins()
+    {
+        playerCoins++;
+        Debug.Log("Player coins: " + playerCoins);
     }
     
 }
