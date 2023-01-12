@@ -2,11 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SessionController : Singleton<SessionController>
+public class SessionController : MonoBehaviour
 {
-    private static int playerLives = 5;
-    private static int playerCoins = 0;
+    private int playerLives = 5;
+    private int playerCoins = 0;
     [SerializeField] private float timeToReload = 0f;
+    // Serialized field for text from TMPro
+    [SerializeField] private TMPro.TextMeshProUGUI playerLivesText;
+    [SerializeField] private TMPro.TextMeshProUGUI playerCoinsText;   
+
+    // Assign the player lives and coins to the text
+    private void Start()
+    {
+        playerLivesText.text = playerLives.ToString();
+        playerCoinsText.text = playerCoins.ToString();
+    }
+
+    void Awake()
+    {
+        int numGameSessions = FindObjectsOfType<SessionController>().Length;
+        if (numGameSessions > 1)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+
 
     // Get the player lives
     public int GetPlayerLives()
@@ -28,6 +52,8 @@ public class SessionController : Singleton<SessionController>
             //If the player lives are less than 0, load the game over scene
             UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
         }
+        //Assign the player lives to the text
+        playerLivesText.text = playerLives.ToString();
     }
 
     // Reload current scene
@@ -52,8 +78,12 @@ public class SessionController : Singleton<SessionController>
     // Increase player coins
     public void IncreasePlayerCoins()
     {
-        playerCoins++;
+        //Print instance id
+        Debug.Log("Instance ID: " + GetInstanceID());
         Debug.Log("Player coins: " + playerCoins);
+        playerCoins++;
+        //Assign the player coins to the text
+        playerCoinsText.text = playerCoins.ToString();
     }
     
 }

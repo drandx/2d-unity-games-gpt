@@ -21,7 +21,7 @@ public class PickUp : MonoBehaviour
     }
     
     private void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log("Triggered");
+        Debug.Log("PickUp Triggered");
         if (other.gameObject.tag == "Player")
         {
             sessionController.IncreasePlayerCoins();
