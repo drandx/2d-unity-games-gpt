@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SessionController : MonoBehaviour
 {
-    private int playerLives = 5;
-    private int playerCoins = 0;
+    private static int playerLives = 5;
+    private static int playerCoins = 0;
     [SerializeField] private float timeToReload = 0f;
     // Serialized field for text from TMPro
     [SerializeField] private TMPro.TextMeshProUGUI playerLivesText;

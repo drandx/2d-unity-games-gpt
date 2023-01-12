@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour
 {
-    SessionController sessionController;
     //Audio clip to play when the player picks up the coin
     [SerializeField] AudioClip pickUpSound;
+    // WasCoinPickedUp variable to check if the coin was picked up
+    bool WasCoinPickedUp = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        sessionController = FindObjectOfType<SessionController>();
     }
 
     // Update is called once per frame
@@ -22,9 +22,10 @@ public class PickUp : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other) {
         Debug.Log("PickUp Triggered");
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && !WasCoinPickedUp)
         {
-            sessionController.IncreasePlayerCoins();
+            WasCoinPickedUp = true;
+            FindObjectOfType<SessionController>().IncreasePlayerCoins();
             // Get audio component and reproduce the finish sound
             AudioSource.PlayClipAtPoint(pickUpSound, Camera.main.transform.position);
             Destroy(gameObject);
